@@ -20,10 +20,12 @@ public class SpheroidsGenerator extends ChunkGenerator {
 		for (int x = 0; x < 16; x++) {
 			for (int z = 0; z < 16; z++) {
 				for (int y = 0; y < 128; y++) {
-					if (y == 2) {
-						result[(x * 16 + z) * 128 + y] = 1;
+					if (y == 0 || y == 1) {
+						result[(x * 16 + z) * 128 + y] = Blocks.Bedrock;
+					} else if (y > 1 && y <= 4) {
+						result[(x * 16 + z) * 128 + y] = Blocks.Water;						
 					} else {
-						result[(x * 16 + z) * 128 + y] = 0;
+						result[(x * 16 + z) * 128 + y] = Blocks.Air;
 					}
 				}
 			}
