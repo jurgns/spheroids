@@ -1,8 +1,5 @@
-name: spheroids
-main: spheroids.spheroids
+name: Spheroids
+main: spheroids.Spheroids
 version: 0.1
+load: startup
 
-commands:
-   command:
-      description: A Command
-      usage: /<command> 

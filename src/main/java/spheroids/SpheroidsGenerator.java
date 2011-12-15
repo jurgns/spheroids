@@ -6,15 +6,28 @@ import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
 
 public class SpheroidsGenerator extends ChunkGenerator {
+	
+	private Spheroids plugin;
 
 	public SpheroidsGenerator(Spheroids spheroids) {
-		// TODO Auto-generated constructor stub
+		plugin = spheroids;
 	}
 
 	@Override
 	public byte[] generate(World world, Random seed, int chunkX, int chunkZ) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		byte[] result = new byte[32768];
 
+		for (int x = 0; x < 16; x++) {
+			for (int z = 0; z < 16; z++) {
+				for (int y = 0; y < 128; y++) {
+					if (y == 2) {
+						result[(x * 16 + z) * 128 + y] = 1;
+					} else {
+						result[(x * 16 + z) * 128 + y] = 0;
+					}
+				}
+			}
+		}
+		return result;
+	}
 }

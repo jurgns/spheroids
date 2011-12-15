@@ -43,7 +43,7 @@ public class Spheroids extends JavaPlugin {
 
         PluginManager pm = this.getServer().getPluginManager();
 
-        getCommand("command").setExecutor(commandExecutor);
+        //getCommand("command").setExecutor(commandExecutor);
 
 
 	}

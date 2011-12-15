@@ -2,3 +2,10 @@
 .project
 .settings
 target
+server/world*
+server/banned-ips.txt
+server/banned-players.txt
+server/ops.txt
+server/server.log
+server/white-list.txt
+server/permissions.yml
