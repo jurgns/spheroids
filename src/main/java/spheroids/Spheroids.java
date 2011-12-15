@@ -31,9 +31,13 @@ public class Spheroids extends JavaPlugin {
 
     public Location playerLoc;
 
-	Logger log = Logger.getLogger("Minecraft");//Define your logger
+	static Logger log = Logger.getLogger("Minecraft");
 
 
+	static public Logger getLogger() {
+		return log;
+	}
+	
 	public void onDisable() {
 		log.info("Disabled message here, shown in console on startup");
 	}
@@ -44,8 +48,6 @@ public class Spheroids extends JavaPlugin {
         PluginManager pm = this.getServer().getPluginManager();
 
         //getCommand("command").setExecutor(commandExecutor);
-
-
 	}
 
 	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id){
