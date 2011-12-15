@@ -20,7 +20,7 @@ public class SpheroidPopulator extends BlockPopulator {
             int centerZ = (chunk.getZ() << 4) + random.nextInt(16);
             int centerY = random.nextInt(100) + 20;
             Vector center = new BlockVector(centerX, centerY, centerZ);
-            int radius = 10;
+            int radius = (int) (random.nextGaussian() * 20) + 1;
             if (random.nextBoolean()) {
     			new Sphere(world, center, radius).draw();
             } else {

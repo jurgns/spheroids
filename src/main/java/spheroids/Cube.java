@@ -16,14 +16,20 @@ public class Cube {
 	}
 	
 	void draw() {
-        for (int x = -radius; x <= radius; x++) {
-            for (int y = -radius; y <= radius; y++) {
-                for (int z = -radius; z <= radius; z++) {
-                    Vector position = center.clone().add(new Vector(x, y, z));
-                    world.getBlockAt(position.toLocation(world)).setType(Material.DIRT);
-                }
-            }
+        for (int a = -radius; a <= radius; a++) {
+        	for (int b = -radius; b <= radius; b++) {
+        		Vector[] positions = {
+        				new Vector(a, b, -radius),
+        				new Vector(a, b, radius),
+        				new Vector(a, -radius, b),
+        				new Vector(a, radius, b),
+        				new Vector(-radius, a, b),
+        				new Vector(radius, a, b)
+        				};
+        		for (Vector v : positions) {
+                    world.getBlockAt(v.add(center).toLocation(world)).setType(Material.DIRT);
+        		}
+        	}
         }
 	}
-
 }
