@@ -1,8 +1,11 @@
 package spheroids;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import org.bukkit.World;
+import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 
 public class SpheroidsGenerator extends ChunkGenerator {
@@ -31,5 +34,10 @@ public class SpheroidsGenerator extends ChunkGenerator {
 			}
 		}
 		return result;
+	}
+	
+	@Override
+	public List<BlockPopulator> getDefaultPopulators(World world) {
+		return Arrays.asList((BlockPopulator) new SpheroidPopulator());
 	}
 }
