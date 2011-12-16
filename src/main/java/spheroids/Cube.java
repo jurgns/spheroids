@@ -1,33 +1,46 @@
 package spheroids;
 
-import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.util.Vector;
 
-public class Cube {
-	private final World world;
-	private final Vector center;
-	private final int radius;
+public class Cube extends BaseVoxel {
+	private int size;
 
-	Cube(World world, Vector center, int radius) {
-		this.world = world;
-		this.center = center;
-		this.radius = radius;
+	Cube(int size) {
+		this.size = size;
+		init();
 	}
 	
-	void draw() {
-        for (int a = -radius; a <= radius; a++) {
-        	for (int b = -radius; b <= radius; b++) {
+	@Override
+	public int getXSize() {
+		return size;
+	}
+	
+	@Override
+	public int getYSize() {
+		return size;
+	}
+	
+	@Override
+	public int getZSize() {
+		return size;
+	}
+	
+	void init() {
+		super.init();
+		Spheroids.getLogger().info("CUBE -> X: " + getXSize() + "; Y: " + getYSize() + "; Z: " + getZSize() + "; W: " + size);
+		Spheroids.getLogger().info("body size: " + getBody().length); 
+        for (int a = 0; a < size; a++) {
+        	for (int b = 0; b < size; b++) {
         		Vector[] positions = {
-        				new Vector(a, b, -radius),
-        				new Vector(a, b, radius),
-        				new Vector(a, -radius, b),
-        				new Vector(a, radius, b),
-        				new Vector(-radius, a, b),
-        				new Vector(radius, a, b)
+        				new Vector(a, b, 0),
+        				new Vector(a, b, size-1),
+        				new Vector(a, 0, b),
+        				new Vector(a, size-1, b),
+        				new Vector(0, a, b),
+        				new Vector(size-1, a, b)
         				};
         		for (Vector v : positions) {
-                    world.getBlockAt(v.add(center).toLocation(world)).setType(Material.DIRT);
+                    setBlock(v, Blocks.Stone);
         		}
         	}
         }

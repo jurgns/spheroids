@@ -22,9 +22,9 @@ public class SpheroidPopulator extends BlockPopulator {
             Vector center = new BlockVector(centerX, centerY, centerZ);
             int radius = (int) (random.nextGaussian() * 20) + 1;
             if (random.nextBoolean()) {
-    			new Sphere(world, center, radius).draw();
+    			//new Sphere(world, center, radius).draw();
             } else {
-            	new Cube(world, center, radius).draw();
+            	//new Cube(world, center, radius).draw();
             }
 		}
 	}
