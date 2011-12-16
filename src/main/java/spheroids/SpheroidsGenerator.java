@@ -32,9 +32,9 @@ public class SpheroidsGenerator extends ChunkGenerator {
 			}
 		}
 		
-		if (random.nextInt(100) <= 30) {
-			Cube c = new Cube(random.nextInt(10) + 5);
-			Vector p = new Vector(5, 20, 5);
+		if (random.nextInt(100) <= 5) {
+			Cube c = new Cube(random.nextInt(40) + 10);
+			Vector p = new Vector(7, random.nextInt(40) + 40, 7);
 			result.applyAtPosition(c, p);
 		}
 		

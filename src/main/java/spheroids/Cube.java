@@ -27,8 +27,8 @@ public class Cube extends BaseVoxel {
 	
 	void init() {
 		super.init();
-		Spheroids.getLogger().info("CUBE -> X: " + getXSize() + "; Y: " + getYSize() + "; Z: " + getZSize() + "; W: " + size);
-		Spheroids.getLogger().info("body size: " + getBody().length); 
+		//Spheroids.getLogger().info("CUBE -> X: " + getXSize() + "; Y: " + getYSize() + "; Z: " + getZSize() + "; W: " + size);
+		//Spheroids.getLogger().info("body size: " + getBody().length); 
         for (int a = 0; a < size; a++) {
         	for (int b = 0; b < size; b++) {
         		Vector[] positions = {

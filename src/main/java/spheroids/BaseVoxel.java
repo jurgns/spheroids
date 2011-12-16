@@ -7,7 +7,7 @@ public abstract class BaseVoxel implements Voxel {
 	private byte[] body;
 	
 	BaseVoxel() {
-		Spheroids.getLogger().info("X: " + getXSize() + "; Y: " + getYSize() + "; Z: " + getZSize());
+		//Spheroids.getLogger().info("X: " + getXSize() + "; Y: " + getYSize() + "; Z: " + getZSize());
 		init();
 	}
 	
@@ -75,18 +75,18 @@ public abstract class BaseVoxel implements Voxel {
 		}
 		Vector stop = thatOffset.clone().add(new Vector(v.getXSize(), v.getYSize(), v.getZSize()));
 		if (thisOffset.getBlockX() + stop.getBlockX() > getXSize()) {
-			Spheroids.getLogger().info("Capping X");
+			//Spheroids.getLogger().info("Capping X");
 			stop.setX(getXSize() - thisOffset.getBlockX());
 		}
 		if (thisOffset.getBlockX() + stop.getBlockY() > getYSize()) {
-			Spheroids.getLogger().info("Capping Y");
+			//Spheroids.getLogger().info("Capping Y");
 			stop.setY(getYSize() - thisOffset.getBlockY());
 		}
 		if (thisOffset.getBlockX() + stop.getBlockZ() > getZSize()) {
-			Spheroids.getLogger().info("Capping Z");
+			//Spheroids.getLogger().info("Capping Z");
 			stop.setZ(getZSize() - thisOffset.getBlockZ());
 		}
-		Spheroids.getLogger().info("STOP: " + stop);
+		//Spheroids.getLogger().info("STOP: " + stop);
 		for (int x = thatOffset.getBlockX(); x < stop.getBlockX(); x++) {
 			for (int y = thatOffset.getBlockY(); y < stop.getBlockY(); y++) {
 				for (int z = thatOffset.getBlockZ(); z < stop.getBlockZ(); z++) {
