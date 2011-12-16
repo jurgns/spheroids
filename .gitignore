@@ -9,3 +9,4 @@ server/ops.txt
 server/server.log
 server/white-list.txt
 server/permissions.yml
+*.jar
